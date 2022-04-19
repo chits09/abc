@@ -1,15 +1,13 @@
 pipeline{
 agent any
-
-stages{
-stage("code checkout")
-{
-steps{
+stages {
+stage('code checkout'){
+steps {
 sh "code is checking out now"
 }
 stage("code build")
 {
-steps{
+steps {
 sh "code_is_building"}
 }
 }
