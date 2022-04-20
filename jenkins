@@ -6,5 +6,32 @@ pipeline {
                 echo 'Hello World'
             }
         }
+	stage('code Build'){
+	    steps{
+		 echo "code is building"
+}	
+}
+	stage('code is deploying'){
+	    steps{
+              echo "code is getting deployed in dev env"	
+}
     }
+	stage('dev deployement'){
+            steps{{input 'deploying artifact to dev enviroment '}}
+}
+
+         stage('QA approval'){
+    steps{{input 'please approve QA deployment '}}
+	 
+}
+
+	stage('QA deployement'){
+           steps{
+            sh echo "deploying artifacts to QA"
+}
+              
+}
+
+
   }
+}
