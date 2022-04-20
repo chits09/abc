@@ -25,10 +25,8 @@ pipeline {
 	 
 }
 
-	stage('QA deployement'){
-           steps{
-            sh echo "deploying artifacts to QA"
-}
+	stage('QA depl"oyement'){
+           steps { sh " echo deploying artifacts to QA"}
               
 }
 
