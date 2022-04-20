@@ -1,11 +1,18 @@
 pipeline
 {
-agent any
-stages
+   agent any
+      stages{
+	stage('SCM code checkout'){
+             steps {git branch: 'master', url: 'https://github.com/prakashk0301/maven-project.git'}}
 
-{ stage ('scm checkout')
- { steps {git branch: 'master', url: 'https://github.com/chits09/abc.git'}         
- 
-}
-}
-}
+        stage('Build the code'){
+            steps {
+                withMaven(globalMavenSettingsConfig: 'null', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: 'null') {
+                    sh 'maven package'
+                    }
+             }
+        }
+
+
+             }
+}  
