@@ -17,11 +17,11 @@ pipeline {
 }
     }
 	stage('dev deployement'){
-            steps{{input 'deploying artifact to dev enviroment '}}
+            steps{input 'deploying artifact to dev enviroment '}
 }
 
          stage('QA approval'){
-    steps{{input 'please approve QA deployment '}}
+    steps{input 'please approve QA deployment '}
 	 
 }
 
