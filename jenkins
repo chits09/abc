@@ -1,35 +1,9 @@
-pipeline {
-    agent any
-    stages {
-        stage('code checkout') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-	stage('code Build'){
-	    steps{
-		 echo "code is building"
-}	
-}
-	stage('code is deploying'){
-	    steps{
-              echo "code is getting deployed in dev env"	
-}
-    }
-	stage('dev deployement'){
-            steps{input 'deploying artifact to dev enviroment '}
-}
+pipeline
+{
+   agent any
+      stages{
+	stage('SCM code checkout'){
+             steps {git branch: 'master', url: 'https://github.com/prakashk0301/maven-project.git'}}
 
-         stage('QA approval'){
-    steps{input 'please approve QA deployment '}
-	 
 }
-
-	stage('QA depl"oyement'){
-           steps { sh " echo deploying artifacts to QA"}
-              
-}
-
-
-  }
 }
